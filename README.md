@@ -1,3 +1,4 @@
+
 # MarkItDown Web 转换器
 
 一个基于 MarkItDown 的 Web 界面工具，提供便捷的文件转 Markdown 功能。
@@ -38,10 +39,9 @@
 
 1. 克隆项目到本地：
 ```bash
-git clone <repository-url>
+git clone git@github.com:ccbsdu/markitdown-web.git
 cd markitdown-web
-
-
+```
 
 2. 创建并激活虚拟环境：
 ```bash
@@ -84,10 +84,6 @@ markitdown-web/
 - 大文件转换可能需要较长时间，请耐心等待
 - 转换后的临时文件会自动清理
 - 请确保有足够的磁盘空间
-
-## 贡献指南
-
-欢迎提交 Issue 和 Pull Request 来帮助改进这个项目。
 
 ## 许可证
 
