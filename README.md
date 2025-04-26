@@ -1,96 +1,76 @@
+# MarkItDown Web
 
-# MarkItDown Web 转换器
-
-一个基于 MarkItDown 的 Web 界面工具，提供便捷的文件转 Markdown 功能。
+这是一个基于Streamlit的Web应用，利用Microsoft的MarkItDown库将各种文件格式转换为Markdown。
 
 ## 功能特点
 
-- 🚀 简单易用的 Web 界面
-- 📦 支持批量文件上传和转换
-- 👀 实时预览转换结果
-- 💾 一键下载转换后的文件
-- 🔌 支持多种文件格式转换
+- 支持多种文件格式转换：PDF、Word、PowerPoint、Excel、图片等
+- 支持OCR文字识别功能，可以从图片和PDF中提取文本
+- 支持使用AI生成图像描述
+- 简洁直观的用户界面
+- 转换结果可直接下载为Markdown文件
 
-## 支持的文件格式
+## 安装步骤
 
-- 文档类
-  - PDF 文件
-  - Microsoft Word 文档
-  - PowerPoint 演示文稿
-  - Excel 表格
-
-- 多媒体
-  - 图片文件（支持 EXIF 元数据和 OCR）
-  - 音频文件（支持 EXIF 元数据和语音转写）
-
-- 其他格式
-  - HTML 网页
-  - CSV 数据文件
-  - JSON 文件
-  - XML 文档
-  - ZIP 压缩包（可遍历内容）
-
-## 环境要求
-
-- Python 3.x
-- pip 包管理器
-
-## 快速开始
-
-1. 克隆项目到本地：
+1. 克隆仓库
 ```bash
-git clone git@github.com:ccbsdu/markitdown-web.git
+git clone https://github.com/yourusername/markitdown-web.git
 cd markitdown-web
 ```
 
-2. 创建并激活虚拟环境：
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. 安装依赖包：
+2. 安装依赖
 ```bash
 pip install -r requirements.txt
 ```
 
-4. 启动应用：
+3. 运行应用
 ```bash
 streamlit run app.py
 ```
 
-5. 在浏览器中访问应用（默认地址：http://localhost:8501）
+## 使用方法
 
-## 使用说明
+1. 访问应用（默认地址为 http://localhost:8501）
+2. 在侧边栏配置相关选项（OCR、插件等）
+3. 上传需要转换的文件
+4. 查看转换结果，并下载Markdown文件
 
-1. 打开应用后，点击"选择要转换的文件"按钮或直接拖拽文件到上传区域
-2. 支持同时选择多个文件进行批量转换
-3. 文件上传后会自动开始转换
-4. 转换完成后可以在界面上预览转换结果
-5. 点击"下载 Markdown 文件"按钮保存转换后的文件
+## OCR与AI图像描述功能
+
+要使用OCR功能：
+- 在侧边栏勾选"使用OCR识别"选项
+- 上传图片或PDF文件，系统将自动识别内容
+
+要使用AI生成图像描述：
+- 在高级选项中勾选"使用AI生成图像描述"
+- 选择LLM模型（OpenAI或Azure OpenAI）
+- 输入相应的API密钥和配置
+- 上传图片，系统将使用AI生成描述
+
+## 关于MarkItDown
+
+MarkItDown是Microsoft开发的一个Python工具，用于将各种文件和Office文档转换为Markdown。更多信息请访问：[Microsoft MarkItDown](https://github.com/microsoft/markitdown)
 
 ## 项目结构
 
 ```
 markitdown-web/
-├── app.py            # 主应用程序
-├── requirements.txt  # 项目依赖
-└── README.md        # 项目文档
+├── app.py              # 主应用文件
+├── requirements.txt    # 项目依赖
+├── README.md           # 项目文档
+└── images/             # 项目图片资源
 ```
 
-## 注意事项
+## 系统要求
 
-- 建议使用虚拟环境运行应用
-- 大文件转换可能需要较长时间，请耐心等待
-- 转换后的临时文件会自动清理
-- 请确保有足够的磁盘空间
+- Python 3.10+
+- 依赖库：详见requirements.txt
+- ffmpeg (用于音频处理和OCR)
+  - Debian/Ubuntu安装: `sudo apt update && sudo apt install -y ffmpeg`
+  - CentOS/RHEL安装: `sudo dnf install -y ffmpeg`
+  - Windows安装: 下载[ffmpeg](https://ffmpeg.org/download.html)并添加到PATH
 
 ## 许可证
 
-本项目基于 MIT 许可证开源。
-
-## 致谢
-
-- 感谢 [MarkItDown](https://github.com/microsoft/markitdown) 提供核心转换功能
-- 感谢 [Streamlit](https://streamlit.io/) 提供优秀的 Web 框架
+MIT License
 ```

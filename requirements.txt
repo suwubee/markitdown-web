@@ -1,2 +1,5 @@
 streamlit
-markitdown
+markitdown[all]
+openai>=1.0.0
+pytesseract
+pillow
